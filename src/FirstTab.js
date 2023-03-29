@@ -1,9 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import FirstTab from './src/FirstTab';
-import SecondTab from './src/SecondTab';
-import { NavigationContainer } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,16 +13,14 @@ const Tab = createBottomTabNavigator();
 //   );
 // }
 
-export default function App() {
-
-  return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="First" component={FirstTab} />
-        <Tab.Screen name="Second" component={SecondTab} />
-      </Tab.Navigator>
-    </NavigationContainer>
-  );
+export default function FirstTab() {
+  
+//   return (
+//     <Tab.Navigator>
+//       <Tab.Screen name = "First" component={FirstTab} />
+//       <Tab.Screen name = "Second" component={SecondTab} />
+//     </Tab.Navigator>
+//   );
 }
 
 const styles = StyleSheet.create({
