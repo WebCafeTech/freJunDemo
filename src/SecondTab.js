@@ -16,7 +16,7 @@ export default function SecondTab() {
                                 <Image style={{ width: 100, height: 100 }} resizeMode='cover' source={{ uri: item.posterUrl }} />
                             </View>
                             <View >
-                                <Text>{item.title} </Text>
+                                <Text style={{}}>{item.title} </Text>
                             </View>
                         </View>
                     )
