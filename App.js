@@ -4,27 +4,40 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FirstTab from './src/FirstTab';
 import SecondTab from './src/SecondTab';
 import { NavigationContainer } from '@react-navigation/native';
+import { Fontisto, Octicons } from '@expo/vector-icons'
+import { Provider } from 'react-redux';
+import store from './src/redux/store';
 
 const Tab = createBottomTabNavigator();
-
-// export default function App() {
-//   const name = 'Home'
-//   return (
-//     <View style={styles.container}>
-//       <Text>khushbu</Text>
-//     </View>
-//   );
-// }
 
 export default function App() {
 
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="First" component={FirstTab} />
-        <Tab.Screen name="Second" component={SecondTab} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Provider store={store} >
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen
+            name="First"
+            component={FirstTab}
+            options={{
+              tabBarIcon: ({ focused, color, size }) => {
+                return (<Fontisto name="list-1" size={24} color="black" />)
+              }
+            }} />
+          <Tab.Screen
+            name="Second"
+            component={SecondTab}
+            options={{
+              tabBarIcon: ({ focused, color, size }) => {
+                return (<Octicons name="tasklist" size={24} color="black" />)
+              }
+            }}
+          />
+
+
+        </Tab.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
 
